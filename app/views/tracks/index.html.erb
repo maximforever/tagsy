@@ -1,0 +1,32 @@
+<h1>Enter new track:</h1>
+
+<div class = "enter-track">
+    <%= form_for (@new_track) do |t| %>
+       <div class = "new-name">
+            <div class = "title">
+                <%= t.text_field :name, placeholder: "Name" %>
+            </div>
+            <div class = "artist">
+                <%= t.text_field :artist, placeholder: "Artist" %>
+            </div>
+            <div class = "album">
+                <strong><%= t.text_field :album, placeholder: "Album" %></strong>
+            </div>  
+            <div class = "year-written">
+                <%= t.text_field :year_written, placeholder: "Year" %>
+            </div>  
+
+             <div class = "space">
+                <%= t.submit "Enter Track"%>
+            </div>  
+        </div>      
+    <% end %>
+</div>
+
+<div class = "display-tracks">
+
+    <% @all_tracks.each do |t| %>
+        <p class = "main-info"><strong><%= link_to t.name, track_path(t) %> </strong> by <em><%= t.artist %></em></p>
+        <p class = "supporting-info"><%= t.album %>, <%=  t.year_written %></p>
+    <% end %>
+</div>
