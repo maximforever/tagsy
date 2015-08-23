@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
   root 'tracks#index'
+  get 'tracks/:id' => 'tracks#show', as: :track
+  get '/tags' => 'tag#index'
+  get '/tags/:id' => 'tag#show', as: :tag
 
   resource :tracks
-
-  get 'tracks/:id' => 'tracks#show', as: :track
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

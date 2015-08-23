@@ -17,6 +17,7 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.find(params[:id])
+    @tags = @track.tags
   end
 
 

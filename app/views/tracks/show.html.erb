@@ -1,3 +1,9 @@
 <h1><%= @track.name %></h1>
 <h3><em><%= @track.album %></em>, <%= @track.year_written %></h3>
 <h3>By: <%= @track.artist %> </h3>
+
+<h2>Tags:</h2>
+<br>
+<% @tags.each do |t| %>
+<%= t.name %>
+<% end %>
